@@ -1,10 +1,5 @@
-<%-- 
-    Document   : index
-    Created on : Jan 25, 2015, 3:35:53 PM
-    Author     : bernardphua
---%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,49 +34,49 @@
                     </table><br>
                     <table class="table bootstrapTable">
                         <tr>
-                            <td class="text-info text-capitalize">Available Points for Upgrade: 6 </td>
+                            <td class="text-info text-capitalize">Available Points for Upgrade: <div id="pts">6</div></td>
                         </tr>   
                     </table>
                     <table class="table table-bordered bootstrapTable">
                         <tbody>
                             <tr>
                                 <td style="color:orange"><strong>STR</strong></td>
-                                <td>30</td>
+                                <td id="strInput">30</td>
                                 <td>
-                                    <button class='btn btn-group-sm btn-success'><span>+</span></button>
-                                    <button class='btn btn-group-sm btn-danger'><span>-</span></button>
+                                    <button class='btn btn-group-sm btn-success' id="btnStrUp"><span>+</span></button>
+                                    <button class='btn btn-group-sm btn-danger' id="btnStrDown"><span>-</span></button>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="color:orange"><strong>INT</strong></td>
-                                <td>18</td>
+                                <td id="intInput">18</td>
                                 <td>
-                                    <button class='btn btn-group-sm btn-success'><span>+</span></button>
-                                    <button class='btn btn-group-sm btn-danger'><span>-</span></button>
-                                </td>
+                                    <button class='btn btn-group-sm btn-success' id="btnIntUp"><span>+</span></button>
+                                    <button class='btn btn-group-sm btn-danger' id="btnIntDown"><span>-</span></button>
+                                </td> 
                             </tr>
                             <tr>
                                 <td style="color:orange"><strong>AGI</strong></td>
-                                <td>23</td>
+                                <td id="agiInput">23</td>
                                 <td>
-                                    <button class='btn btn-group-sm btn-success'><span>+</span></button>
-                                    <button class='btn btn-group-sm btn-danger'><span>-</span></button>
+                                    <button class='btn btn-group-sm btn-success' id="btnAgiUp"><span>+</span></button>
+                                    <button class='btn btn-group-sm btn-danger' id="btnAgiDown"><span>-</span></button>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="color:orange"><strong>WILL</strong></td>
-                                <td>20</td>
+                                <td id="willInput">20</td>
                                 <td>
-                                    <button class='btn btn-group-sm btn-success'><span>+</span></button>
-                                    <button class='btn btn-group-sm btn-danger'><span>-</span></button>
+                                    <button class='btn btn-group-sm btn-success' id="btnWillUp"><span>+</span></button>
+                                    <button class='btn btn-group-sm btn-danger' id="btnWillDown"><span>-</span></button>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="color:orange"><strong>DEX</strong></td>
-                                <td>25</td>
+                                <td id="dexInput">25</td>
                                 <td>
-                                    <button class='btn btn-group-sm btn-success'><span>+</span></button>
-                                    <button class='btn btn-group-sm btn-danger'><span>-</span></button>
+                                    <button class='btn btn-group-sm btn-success' id="btnDexUp"><span>+</span></button>
+                                    <button class='btn btn-group-sm btn-danger' id="btnDexDown"><span>-</span></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -102,4 +97,57 @@
             
     </body>
     <script src="web/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script>   
+        $('#btnStrUp').click(function() {
+            var currentVal = parseInt($('#pts').val());
+            $('#strInput').html(function(i, val) { return val*1+1; });
+            $('#pts').html(function(i,val){ return val*1-1});
+        });
+        
+        $('#btnIntUp').click(function() {
+            $('#intInput').html(function(i, val) { return val*1+1; });
+            $('#pts').html(function(i,val){ return val*1-1});
+        });
+        
+        $('#btnAgiUp').click(function() {
+            $('#agiInput').html(function(i, val) { return val*1+1; });
+            $('#pts').html(function(i,val){ return val*1-1});
+        });
+        
+        $('#btnWillUp').click(function() {
+            $('#willInput').html(function(i, val) { return val*1+1; });
+            $('#pts').html(function(i,val){ return val*1-1});
+        });
+        
+        $('#btnDexUp').click(function() {
+            $('#dexInput').html(function(i, val) { return val*1+1; });
+            $('#pts').html(function(i,val){ return val*1-1});
+        });
+        
+        $('#btnStrDown').click(function() {
+            $('#strInput').html(function(i, val) { return val*1-1; });
+            $('#pts').html(function(i,val){ return val*1-1});
+        });
+        
+        $('#btnIntDown').click(function() {
+            $('#intInput').html(function(i, val) { return val*1-1; });
+            $('#pts').html(function(i,val){ return val*1-1});
+        });
+        
+        $('#btnAgiDown').click(function() {
+            $('#agiInput').html(function(i, val) { return val*1+-1; });
+            $('#pts').html(function(i,val){ return val*1-1});
+        });
+        
+        $('#btnWillDown').click(function() {
+            $('#willInput').html(function(i, val) { return val*1-1; });
+            $('#pts').html(function(i,val){ return val*1-1});
+        });
+        
+        $('#btnDexDown').click(function() {
+            $('#dexInput').html(function(i, val) { return val*1-1; });
+            $('#pts').html(function(i,val){ return val*1-1});
+        });
+    </script>
 </html>
