@@ -1,0 +1,32 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 14, 2015, 10:56:29 AM
+    Author     : Bernard Phua
+*/
+
+.badgeCount {
+    position:absolute;
+    bottom:10px;
+    right:-5px;
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    margin-top: -30px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #777;
+    border-radius: 10px;
+}
+
+.badgeOuter{
+    position:relative;
+}
